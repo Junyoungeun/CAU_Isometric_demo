@@ -7,6 +7,7 @@ extern Player player;
 extern SceneID gameScene[MAX_LEVEL];
 extern Bullet bullets[100];
 extern Turret turrets[MAX_LEVEL][MAX_NUMBER_OF_TURRET];
+extern heart_struct heart;
 
 const char* const PlayerIdleImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FACE_SIZE][NUMBER_OF_PLAYER_IDLE_IMAGE_FOR_EACH_DIR] =
 {
@@ -156,9 +157,9 @@ const char* const PlayerIdleImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     }
 
 };
-const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FACE_SIZE][NUMBER_OF_PLAYER_MOVE_IMAGE_FOR_EACH_DIR] = 
+const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FACE_SIZE][NUMBER_OF_PLAYER_MOVE_IMAGE_FOR_EACH_DIR] =
 {
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_00000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_00000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_00001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_00002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_00003.png",
@@ -175,7 +176,7 @@ const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     "img/players/isometric_Mini-Crusader/run/crusader_run_00014.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_00015.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_00016.png"},
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_10000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_10000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_10001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_10002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_10003.png",
@@ -192,7 +193,7 @@ const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     "img/players/isometric_Mini-Crusader/run/crusader_run_10014.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_10015.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_10016.png"},
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_20000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_20000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_20001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_20002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_20003.png",
@@ -209,7 +210,7 @@ const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     "img/players/isometric_Mini-Crusader/run/crusader_run_20014.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_20015.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_20016.png"},
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_30000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_30000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_30001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_30002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_30003.png",
@@ -226,7 +227,7 @@ const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     "img/players/isometric_Mini-Crusader/run/crusader_run_30014.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_30015.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_30016.png"},
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_40000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_40000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_40001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_40002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_40003.png",
@@ -243,7 +244,7 @@ const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     "img/players/isometric_Mini-Crusader/run/crusader_run_40014.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_40015.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_40016.png"},
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_50000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_50000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_50001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_50002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_50003.png",
@@ -260,7 +261,7 @@ const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     "img/players/isometric_Mini-Crusader/run/crusader_run_50014.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_50015.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_50016.png"},
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_60000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_60000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_60001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_60002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_60003.png",
@@ -277,7 +278,7 @@ const char* const PlayerMoveImages[DirectionOfPlayerFace::DIRECTION_OF_PLAYER_FA
     "img/players/isometric_Mini-Crusader/run/crusader_run_60014.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_60015.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_60016.png"},
-    {"img/players/isometric_Mini-Crusader/run/crusader_run_70000.png", 
+    {"img/players/isometric_Mini-Crusader/run/crusader_run_70000.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_70001.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_70002.png",
     "img/players/isometric_Mini-Crusader/run/crusader_run_70003.png",
@@ -464,6 +465,34 @@ SceneID moveScene = createScene("", "img/mainScene.png");
 int animation1_Y = 360, animation2_Y = -360, cnt = 0;
 bool isMovingLevel = false;
 
+void heart_function() {
+    heart.scene = gameScene[level];
+    for (int i = 0; i < 5; i++) {
+        heart.heart[i] = createObject("img/heart.png");
+        locateObject(heart.heart[i], heart.scene, heart.heart_x[i], heart.heart_y);
+
+    }
+}
+//
+void ShowHeart() {
+    for (int i = 0; i < 5; i++) {
+        heart.scene = gameScene[level];
+        locateObject(heart.heart[i], heart.scene, heart.heart_x[i], heart.heart_y);
+        showObject(heart.heart[i]);
+    }
+}
+
+// knockback
+void MinusHeart() {
+    for (int i = 0; i < 5; i++) {
+        if (heart.num_heart == i)
+            hideObject(heart.heart[i]);
+    }
+    if (heart.num_heart == 0)
+        showMessage("GAME OVER");
+    heart.num_heart--;
+}
+
 void InitPlayer() {
     player.obj = createObject(PlayerIdleImages[DirectionOfPlayerFace::DOWN][0]);
     player.scene = gameScene[level];
@@ -486,7 +515,7 @@ void InitPlayer() {
 
 bool IsOutOfMap()
 {
-    Coord player_loc = {PLAYER_BASIC_X, PLAYER_BASIC_Y };
+    Coord player_loc = { PLAYER_BASIC_X, PLAYER_BASIC_Y };
 
     for (int y = 0; y <= BASE_Y; ++y)
     {
@@ -502,11 +531,11 @@ bool IsOutOfMap()
             points[3] = TransformCoord({ x, y }, { CHUNK_SIZE - 1, 0 }, d_coord);
 
             points[0].x += TILE_WIDTH_OFFSET_FROM_LEFT;
-            points[0].y += TILE_SIZE*1.5;
+            points[0].y += TILE_SIZE * 1.5;
             points[1].x += TILE_WIDTH_OFFSET_FROM_LEFT + 21 * SCALE / 2;
             points[1].y += TILE_SIZE;
             points[2].x += TILE_SIZE;
-            points[2].y += TILE_SIZE*1.5;
+            points[2].y += TILE_SIZE * 1.5;
             points[3].x += TILE_SIZE;
             points[3].y += TILE_SIZE * 1.5;
 
@@ -628,7 +657,7 @@ void RefreshPlayer()
         break;
     case PlayerState::ATTACK:
         if (player.image_frame == NUMBER_OF_PLAYER_ATTACK_IMAGE_FOR_EACH_DIR - 5) {
-            for (int i = 0; ; i++) {
+            for (int i = 0; i < MAX_NUMBER_OF_BULLET; i++) {
                 if (turrets[level][i].obj == 0)
                     break;
                 if (isnearPlayer(player.x, player.y, PlayerRange, i)) {
@@ -663,10 +692,8 @@ void PlayerTimerCallback(TimerID timer) {
         }
         MoveMap(player.x, player.y);
         MoveTurret(player.x, player.y);
-        for (int i = 0; i < MAX_NUMBER_OF_BULLET; i++) {
-            MoveBullet(0, 0, i);
-        }
         RefreshPlayer();
+        ShowHeart();
         if (IsOutOfMap() && !isMovingLevel) {
             printf("Out of map: %lld, %ld\n", time(NULL), clock());
             level++;
@@ -705,6 +732,9 @@ void PlayerTimerCallback(TimerID timer) {
 }
 
 void MoveLevelAnimation() {
+    for (int i = 0; i < 5; i++) {
+        hideObject(heart.heart[i]);
+    }
     locateObject(animation1, moveScene, 0, animation1_Y);
     locateObject(animation2, moveScene, 0, animation2_Y);
     showObject(animation1);
@@ -722,5 +752,6 @@ void MoveLevelAnimation() {
     scaleObject(player.obj, PLAYER_SCALE);
     showObject(player.obj);
     startTimer(moveAnimationTimer);
+    heart_function();
     enterScene(moveScene);
 }

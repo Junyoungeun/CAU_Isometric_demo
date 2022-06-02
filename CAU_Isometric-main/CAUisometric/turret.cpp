@@ -57,7 +57,7 @@ void InitTurret() {
 
 void MoveTurret(const int dx, const int dy) {
     //640 360
-    for(int i = 0; ; i++){
+    for(int i = 0; i < MAX_NUMBER_OF_BULLET; i++){
         if (turrets[level][i].obj == 0) break;
         Coord loc = TransformCoord(turrets[level][i].x, turrets[level][i].y, turrets[level][i].inner_x, turrets[level][i].inner_y, dx, dy);
         locateObject(turrets[level][i].obj, turrets[level][i].scene, loc.x, loc.y);
@@ -79,6 +79,7 @@ bool isnearPlayer(const int dx, const int dy, int range, int i) {
     if (r < range) {
         printf("================%d=================\n", r);
         return true;
+        
     }
     return false;
 }
